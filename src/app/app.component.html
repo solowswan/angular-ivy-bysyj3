@@ -1,21 +1,47 @@
-<h1>{{title}}</h1>
+<ng-container>
+<mat-toolbar class="example-header">Header</mat-toolbar>
+<!--
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+               [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
+               [fixedBottomGap]="options.value.bottom">
+    {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+  </mat-sidenav>
 
-<mat-toolbar color="primary" class="example-toolbar">
-<mat-toolbar-row>
-<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
-<h3 class="example-app-name">Cleaning Line:</h3>
-  <span class="menu-spacer"></span>
-  <div>
-    <a mat-button> Instruments </a>
-    <a mat-button> Parties </a>
-    <a mat-button> Prices </a>
-    <a mat-button> Portfolios </a>
-    <a mat-button> Holdings </a>
+  <mat-sidenav-content [formGroup]="options">
+    <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
+    <p><mat-form-field appearance="fill">
+      <mat-label>Top gap</mat-label>
+      <input matInput type="number" formControlName="top">
+    </mat-form-field></p>
+    <p><mat-form-field appearance="fill">
+      <mat-label>Bottom gap</mat-label>
+      <input matInput type="number" formControlName="bottom">
+    </mat-form-field></p>
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+-->
+
+<mat-sidenav-container>
+<mat-sidenav #sidenav>
+  <mat-nav-list>
+
+    
+  </mat-nav-list>
+</mat-sidenav>
+<mat-sidenav-content>
+  <div style="height: 88vh;">
+
   </div>
-</mat-toolbar-row>
-</mat-toolbar>
+</mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="example-footer">Footer</mat-toolbar>
+</ng-container>
 
 
 
-<app-heroes></app-heroes>
-<app-messages></app-messages>
+<!-- Copyright 2017 Google Inc. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at http://angular.io/license -->

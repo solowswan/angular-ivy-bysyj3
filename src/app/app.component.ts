@@ -1,29 +1,21 @@
-import { Component, ViewChild } from '@angular/core';
-import {MatSidenav} from '@angular/material/sidenav'; 
+import { Component } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
-  @ViewChild('sidenav') sidenav: MatSidenav;
-  title = 'CSDB SHS PORTAL';
-  isExpanded = true;
-  showSubmenu: boolean = false;
-  isShowing = false;
-  showSubSubMenu: boolean = false;
+export class AppComponent {
+  options: FormGroup;
 
-  mouseenter() {
-    if (!this.isExpanded) {
-      this.isShowing = true;
-    }
-  }
-
-  mouseleave() {
-    if (!this.isExpanded) {
-      this.isShowing = false;
-    }
+  constructor(fb: FormBuilder) {
+    this.options = fb.group({
+      bottom: 0,
+      fixed: false,
+      top: 0,
+    });
   }
 
 }
