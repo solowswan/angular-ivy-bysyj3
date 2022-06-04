@@ -1,4 +1,4 @@
-<ng-container>
+<ng-container *ngIf="shouldRun">
 <mat-toolbar class="example-header">Header</mat-toolbar>
 
 <mat-sidenav-container class="example-container">
@@ -10,17 +10,20 @@
 
   <mat-sidenav-content [formGroup]="options">
     <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
-    <p><mat-form-field appearance="fill">
-      <mat-label>Top gap</mat-label>
-      <input matInput type="number" formControlName="top">
+    <p><mat-form-field>
+      <input matInput type="number" formControlName="top" placeholder="Top gap">
     </mat-form-field></p>
-    <p><mat-form-field appearance="fill">
-      <mat-label>Bottom gap</mat-label>
-      <input matInput type="number" formControlName="bottom">
+    <p><mat-form-field>
+      <input matInput type="number" formControlName="bottom" placeholder="Bottom gap">
     </mat-form-field></p>
-    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+
+    <app-heroes></app-heroes>
+    <app-messages></app-messages>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+
 
 <mat-toolbar class="example-footer">Footer</mat-toolbar>
 </ng-container>

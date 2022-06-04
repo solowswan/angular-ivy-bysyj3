@@ -17,5 +17,6 @@ export class AppComponent {
       top: 0,
     });
   }
+  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 
 }

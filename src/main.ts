@@ -1,16 +1,40 @@
 import './polyfills';
 
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DemoMaterialModule} from './material-module';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './app/in-memory-data.service';
 
-import { AppModule } from './app/app.module';
+import {AppComponent} from './app/app.component';
+import { HeroesComponent } from './app/heroes/heroes.component';
+import { HeroDetailComponent  } from './app/hero-detail/hero-detail.component';
+import { MessagesComponent } from './app/messages/messages.component';
 
-platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
-  // Ensure Angular destroys itself on hot reloads.
-  if (window['ngRef']) {
-    window['ngRef'].destroy();
-  }
-  window['ngRef'] = ref;
+@NgModule({
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    DemoMaterialModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
+  ],
+  entryComponents: [AppComponent],
+  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent],
+  bootstrap: [AppComponent],
+  providers: []
+})
+export class AppModule {}
 
-  // Otherwise, log the boot error
-}).catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule);
