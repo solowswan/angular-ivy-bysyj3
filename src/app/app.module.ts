@@ -9,7 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list'; 
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
-import { FlexLayoutModule } from ‘@angular/flex-layout’;
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 import { HttpClientModule } from '@angular/common/http';
