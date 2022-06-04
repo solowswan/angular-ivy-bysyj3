@@ -27,3 +27,8 @@
   left: 0;
   right: 0;
 }
+
+mat-button-toggle-group {
+  margin-left: 8px;
+  font-size: small;
+}

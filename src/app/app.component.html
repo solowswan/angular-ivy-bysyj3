@@ -1,14 +1,17 @@
 <ng-container *ngIf="shouldRun">
 <mat-toolbar color="primary" class="example-toolbar">
 <mat-toolbar-row>
-<h3 class="example-app-name">Cleaning Line:</h3>
+<h3 class="example-app-name"></h3>
   <span class="menu-spacer"></span>
   <div>
-    <a mat-button> Instruments Issuances </a>
-    <a mat-button> Instruments Holdings </a>
-    <a mat-button> Parties </a>
-    <a mat-button> Prices/FX Rates </a>
-    <a mat-button> Portfolios </a>
+  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color" appearance="legacy" name="fontStyle" aria-label="Font Style">
+  Cleaning Line:
+  <mat-button-toggle value="issuance">Instrument Issuances</mat-button-toggle>
+  <mat-button-toggle value="holding">Instrument Holdings</mat-button-toggle>
+  <mat-button-toggle value="party">Parties</mat-button-toggle>
+  <mat-button-toggle value="price">Prices / FX Rates</mat-button-toggle>
+  <mat-button-toggle value="portfolio">Portfolios</mat-button-toggle>
+</mat-button-toggle-group>
   </div>
 </mat-toolbar-row>
 </mat-toolbar>
