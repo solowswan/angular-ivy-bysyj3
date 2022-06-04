@@ -1,5 +1,17 @@
 <ng-container *ngIf="shouldRun">
-<mat-toolbar class="example-header">Header</mat-toolbar>
+<mat-toolbar color="primary" class="example-toolbar">
+<mat-toolbar-row>
+<h3 class="example-app-name">Cleaning Line:</h3>
+  <span class="menu-spacer"></span>
+  <div>
+    <a mat-button> Instruments Issuances </a>
+    <a mat-button> Instruments Holdings </a>
+    <a mat-button> Parties </a>
+    <a mat-button> Prices/FX Rates </a>
+    <a mat-button> Portfolios </a>
+  </div>
+</mat-toolbar-row>
+</mat-toolbar>
 
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
