@@ -8,6 +8,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent {
+
   options: FormGroup;
 
   constructor(fb: FormBuilder) {
@@ -18,5 +19,22 @@ export class AppComponent {
     });
   }
   shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
+
+  isExpanded = true;
+  showSubmenu: boolean = false;
+  isShowing = false;
+  showSubSubMenu: boolean = false;
+
+  mouseenter() {
+    if (!this.isExpanded) {
+      this.isShowing = true;
+    }
+  }
+
+  mouseleave() {
+    if (!this.isExpanded) {
+      this.isShowing = false;
+    }
+  }
 
 }
