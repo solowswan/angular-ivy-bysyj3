@@ -29,6 +29,7 @@ import { MessagesComponent } from './app/messages/messages.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
+    
   ],
   entryComponents: [AppComponent],
   declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent],

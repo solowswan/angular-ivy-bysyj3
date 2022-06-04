@@ -39,7 +39,7 @@ mat-button-toggle-group {
 }
 .example-sidenav-content {
   display: flex;
-  height: 100%;
+  height: 70%;
   align-items: center;
   justify-content: center;
 }
