@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list'; 
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
+import { FlexLayoutModule } from ‘@angular/flex-layout’;
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +37,8 @@ import { MessagesComponent } from './messages/messages.component';
     MatListModule,
     MatTabsModule,
     MatNativeDateModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FlexLayoutModule
   ],
   declarations: [ AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent],
   bootstrap:    [ AppComponent ]
