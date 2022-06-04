@@ -1,11 +1,11 @@
 <ng-container *ngIf="shouldRun">
+<mat-toolbar class="example-header">Cleaning Line:</mat-toolbar>
 <mat-toolbar color="primary" class="example-toolbar">
 <mat-toolbar-row>
 <h3 class="example-app-name"></h3>
   <span class="menu-spacer"></span>
-  <div>
+  <div>Cleaning Line:
   <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color" appearance="legacy" name="fontStyle" aria-label="Font Style">
-  Cleaning Line:
   <mat-button-toggle value="issuance">Instrument Issuances</mat-button-toggle>
   <mat-button-toggle value="holding">Instrument Holdings</mat-button-toggle>
   <mat-button-toggle value="party">Parties</mat-button-toggle>
@@ -16,45 +16,37 @@
 </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container class="example-container" autosize>
-<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-<mat-nav-list>
-  <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-    <span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>
-  </mat-list-item>
-  <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
-    <a mat-list-item href="...">Submenu Item 1</a>
-    <a mat-list-item href="...">Submenu Item 2</a>
-    <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
-      <span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
-      <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
-    </mat-list-item>
-    <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
-      <mat-list-item>SubSubmenu Item 1</mat-list-item>
-      <mat-list-item>SubSubmenu Item 2</mat-list-item>
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+<!-- This is the tree node template for leaf nodes -->
+<!-- There is inline padding applied to this node using styles.
+  This padding value depends on the mat-icon-button width. -->
+<mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+    {{node.name}}
+</mat-tree-node>
+<!-- This is the tree node template for expandable nodes -->
+<mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+    <div class="mat-tree-node">
+      <button mat-icon-button matTreeNodeToggle
+              [attr.aria-label]="'Toggle ' + node.name">
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+      {{node.name}}
     </div>
+    <!-- There is inline padding applied to this div using styles.
+        This padding value depends on the mat-icon-button width.  -->
+    <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
+        role="group">
+      <ng-container matTreeNodeOutlet></ng-container>
   </div>
-</mat-nav-list>
-<mat-nav-list>
-</mat-nav-list>
-</mat-sidenav>
-
-  <mat-sidenav-content [formGroup]="options">
-    <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
-    <p><mat-form-field>
-      <input matInput type="number" formControlName="top" placeholder="Top gap">
-    </mat-form-field></p>
-    <p><mat-form-field>
-      <input matInput type="number" formControlName="bottom" placeholder="Bottom gap">
-    </mat-form-field></p>
-
-    <app-heroes></app-heroes>
-    <app-messages></app-messages>
-
-  </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-nested-tree-node>
+</mat-tree>
 
 
-
+<app-heroes></app-heroes>
+<app-messages></app-messages>
 <mat-toolbar class="example-footer">Footer</mat-toolbar>
+
 </ng-container>
