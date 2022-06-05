@@ -9,7 +9,7 @@
 <mat-toolbar-row>
 <h1 class="example-app-name"></h1>
   <span class="menu-spacer"></span>
-  <div>Cleaning Line:
+  <div class="example-line">Cleaning Line:
   <mat-button-toggle-group #group="matButtonToggleGroup" [value]="selectedVal" (change)="onValChange(group.value)" >
   <mat-button-toggle value="issuance">Instrument Issuances</mat-button-toggle>
   <mat-button-toggle value="holding">Instrument Holdings</mat-button-toggle>
@@ -71,5 +71,5 @@
 </div>
 </div>
 </div>
-
+<mat-toolbar class="example-footer">powered by Angular 14</mat-toolbar>
 </ng-container>

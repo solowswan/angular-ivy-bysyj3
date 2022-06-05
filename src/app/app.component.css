@@ -35,8 +35,19 @@
   background: rgba(255, 0, 0, 0.5);
 }
 
+.example-line {
+  position:relative;
+  font-weight: bold;
+  height: 50px;
+  font-size: small;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .example-header {
   position: fixed;
+  font-weight: bold;
   top: 0;
   left: 0;
   right: 0;
@@ -44,6 +55,7 @@
 
 .example-footer {
   position: fixed;
+  height: 25px;
   bottom: 0;
   left: 0;
   right: 0;
