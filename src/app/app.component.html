@@ -5,7 +5,7 @@
 <h3 class="example-app-name"></h3>
   <span class="menu-spacer"></span>
   <div>Cleaning Line:
-  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color" appearance="legacy" name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle-group #group="matButtonToggleGroup" [value]="selectedVal" (change)="onValChange(group.value)" >
   <mat-button-toggle value="issuance">Instrument Issuances</mat-button-toggle>
   <mat-button-toggle value="holding">Instrument Holdings</mat-button-toggle>
   <mat-button-toggle value="party">Parties</mat-button-toggle>
@@ -41,8 +41,7 @@
           {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
         </mat-icon>
       </button>
-      <a href ='{{node.url}}'>
-      {{node.name}}</a>
+      <a routerLink='{{node.url}}'>{{node.name}}</a>
     </div>
     <!-- There is inline padding applied to this div using styles.
         This padding value depends on the mat-icon-button width.  -->
@@ -57,7 +56,7 @@
 
 <div class="naija-flag">
 <div class="first">
-<nav>
+<nav> {{ selectedVal }}
 <a routerLink="/heroesdetail">Heroes</a>
 </nav>
  <router-outlet></router-outlet>

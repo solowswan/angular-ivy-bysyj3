@@ -13,7 +13,7 @@ interface FoodNode {
 
 const TREE_DATA: FoodNode[] = [
   {
-    "name": "Batches","url":"/heroes",
+    "name": "Batches","url":"/heroesdetail",
     "children": [
       {
         "name": "Capture","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""},{"name": "File manager","url":""}]
@@ -29,7 +29,7 @@ const TREE_DATA: FoodNode[] = [
     ]
   },
   {
-    "name": "Staging Area","url":"",
+    "name": "Staging Area","url":"/heroes",
     "children": [{"name": "Apple","url":""}, {"name": "Banana","url":""}, {"name": "Fruit loops","url":""}]
   },
   {
@@ -66,10 +66,16 @@ export class AppComponent {
   treeControl = new NestedTreeControl<FoodNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<FoodNode>();
 
+  public selectedVal: string;
+
+  public onValChange(val: string) {
+    this.selectedVal = val;
+  }
+  
   constructor() {     this.dataSource.data = TREE_DATA;
    }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {    this.selectedVal ='option1';
   }
 
 
