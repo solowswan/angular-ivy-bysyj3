@@ -30,25 +30,25 @@ const TREE_DATA: FoodNode[] = [
   },
   {
     "name": "Staging Area","url":"/heroes",
-    "children": [{"name": "Apple","url":""}, {"name": "Banana","url":""}, {"name": "Fruit loops","url":""}]
+    "children": [{"name": "Record browser","url":""}]
   },
   {
     "name": "UDS","url":"",
-    "children": [{"name": "Apple","url":"https://orf.at"}, {"name": "Banana","url":"https://orf.at"}, {"name": "Fruit loops","url":"https://orf.at"}]
+    "children": [{"name": "Candidates","url":"/heroesdetail"}, {"name": "Compounds","url":"/heroesdetail"}, {"name": "Re-link instruments","url":"/heroesdetail"},{"name": "Re-transfer instruments","url":"/heroesdetail"}]
   },
   {
     "name": "Configuration","url":"",
-    "children": [{"name": "Apple","url":"https://orf.at"}, {"name": "Banana","url":"https://orf.at"}, {"name": "Fruit loops","url":"https://orf.at"}]
+    "children": [{"name": "Source parameters","url":"/heroesdetail"}, {"name": "Grouping criteria","url":"/heroesdetail"}, {"name": "Compounding rules","url":"/heroesdetail"}]
   },
-  {"name": "Dashboard","url":"https://orf.at" }, 
-  {"name": "iDQM Portal","url":"https://orf.at" }, 
-  {"name": "Instruments","url":"https://orf.at" }, 
-  {"name": "Parties","url":"https://orf.at" }, 
-  {"name": "Codelists","url":"https://orf.at" }, 
-  {"name": "WS Parameters","url":"https://orf.at" }, 
-  {"name": "Worker jobs pool","url":"https://orf.at" }, 
-  {"name": "Incremental propagation","url":"https://orf.at" }, 
-  {"name": "System","url":"","children": [{"name": "Technical info","url":"https://orf.at"}, {"name": "DB pools","url":"https://orf.at","children": [{"name": "Main pool","url":"https://orf.at"}, {"name": "Caching pool","url":"https://orf.at"},{"name": "WH pool","url":"https://orf.at"}]},{"name": "Cache","url":"https://orf.at"}]
+  {"name": "Dashboard","url":"/heroesdetail" }, 
+  {"name": "iDQM Portal","url":"/heroesdetail" }, 
+  {"name": "Instruments","url":"/heroesdetail" }, 
+  {"name": "Parties","url":"/heroesdetail" }, 
+  {"name": "Codelists","url":"/heroesdetail" }, 
+  {"name": "WS Parameters","url":"/heroesdetail" }, 
+  {"name": "Worker jobs pool","url":"/heroesdetail" }, 
+  {"name": "Incremental propagation","url":"/heroesdetail" }, 
+  {"name": "System","url":"","children": [{"name": "Technical info","url":"/heroesdetail"}, {"name": "DB pools","url":"/heroesdetail","children": [{"name": "Main pool","url":"/heroesdetail"}, {"name": "Caching pool","url":"/heroesdetail"},{"name": "WH pool","url":"/heroesdetail"}]},{"name": "Cache","url":"/heroesdetail"}]
   },
   {
     "name": "Uploads","url":"",

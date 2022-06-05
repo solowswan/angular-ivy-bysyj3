@@ -32,8 +32,8 @@
   <mat-tree-node  *matTreeNodeDef="let node" matTreeNodePadding>
   <!-- use a disabled button to provide padding for tree leaf -->
   <button mat-icon-button disabled></button>
-  <a href ='{{node.url}}'>
-    {{node.name}}</a>
+  <a routerLink='{{node.url}}'>{{node.name}}</a>
+
 </mat-tree-node>
 
 
