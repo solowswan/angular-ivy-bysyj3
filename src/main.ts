@@ -1,5 +1,5 @@
 import './polyfills';
-
+import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -16,8 +16,13 @@ import { HeroesComponent } from './app/heroes/heroes.component';
 import { HeroDetailComponent  } from './app/hero-detail/hero-detail.component';
 import { MessagesComponent } from './app/messages/messages.component';
 
+const routes: Routes = [
+  { path: 'heroes', component: HeroesComponent }
+];
+
 @NgModule({
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -31,6 +36,7 @@ import { MessagesComponent } from './app/messages/messages.component';
     ),
     
   ],
+  exports: [RouterModule],
   entryComponents: [AppComponent],
   declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent],
   bootstrap: [AppComponent],

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -21,15 +20,11 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 
-const routes: Routes = [
-  { path: 'app', component: AppComponent }
-];
 
 
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -53,6 +48,5 @@ const routes: Routes = [
     MessagesComponent,
   ],
   bootstrap: [AppComponent],
-  exports: [RouterModule]
 })
 export class AppModule {}
