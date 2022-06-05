@@ -70,7 +70,4 @@ export class AppComponent {
 
   hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
 
-
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
-
 }
