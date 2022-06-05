@@ -10,6 +10,29 @@ export interface UserData {
   fruit: string;
 }
 
+export interface BatchElement {
+  idcpbatch: number;
+  process_id: number;  
+  filename: string;
+  source: string;
+  state: string;
+  startdate: string;
+  records: number;
+}
+
+const BATCH_DATA: BatchElement[] = [
+  {idcpbatch: 1, process_id:111, filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK", state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 2, process_id:112,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 3, process_id:113,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 4, process_id:114,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 5, process_id:115,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 6, process_id:116,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 7, process_id:117,filename: '20220601-1231241-BBK-SHSS-1123124-20220531',source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 8, process_id:118,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 9, process_id:119,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 10, process_id:120,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+];
+
 /** Constants used to fill up our data base. */
 const FRUITS: string[] = [
   'blueberry',
@@ -52,18 +75,20 @@ const NAMES: string[] = [
   styleUrls: ['./batchbrowser.component.css']
 })
 export class BatchbrowserComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
-  dataSource: MatTableDataSource<UserData>;
+  //displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['idcpbatch', 'process_id', 'filename', 'source','state','startdate','records'];
+  dataSource = new MatTableDataSource(BATCH_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor() {
     // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+    //const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    //this.dataSource = new MatTableDataSource(users);
+    //this.dataSource = BATCH_DATA;
   }
 
   ngAfterViewInit() {
