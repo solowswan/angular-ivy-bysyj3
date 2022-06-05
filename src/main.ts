@@ -19,7 +19,8 @@ import { BatchbrowserComponent } from './app/batchbrowser/batchbrowser.component
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
-  { path: 'heroesdetail', component: HeroDetailComponent }
+  { path: 'heroesdetail', component: HeroDetailComponent },
+  { path: 'batchbrowser', component: BatchbrowserComponent }
 ];
 
 @NgModule({
