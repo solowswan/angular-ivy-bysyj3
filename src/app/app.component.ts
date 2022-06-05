@@ -6,52 +6,53 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
 interface FoodNode {
-  "name": string;
+  name: string;
+  url:string;
   children?: FoodNode[];
 }
 
 const TREE_DATA: FoodNode[] = [
   {
-    "name": "Batches",
+    "name": "Batches","url":"/heroes",
     "children": [
       {
-        "name": "Capture","children": [{"name": "Dashboard"},{"name": "Batches"},{"name": "File manager"}]
+        "name": "Capture","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""},{"name": "File manager","url":""}]
       }, 
-      {"name": "Unification","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"} ]}]      }, 
-      {"name": "Grouping","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"} ]}]      }, 
-      {"name": "Transfer","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"}]}]      }, 
-      {"name": "Enrichment","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"} ]}]      }, 
-      {"name": "Population","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"} ]}]      }, 
-      {"name": "Purging","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"} ]}]      }, 
-      {"name": "Compression","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"} ]}]      }, 
-      {"name": "DW Compression","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"}]}]}
+      {"name": "Unification","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""} ]}]      }, 
+      {"name": "Grouping","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""} ]}]      }, 
+      {"name": "Transfer","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""}]}]      }, 
+      {"name": "Enrichment","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""} ]}]      }, 
+      {"name": "Population","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""} ]}]      }, 
+      {"name": "Purging","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""} ]}]      }, 
+      {"name": "Compression","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""} ]}]      }, 
+      {"name": "DW Compression","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""}]}]}
     ]
   },
   {
-    "name": "Staging Area",
-    "children": [{"name": "Apple"}, {"name": "Banana"}, {"name": "Fruit loops"}]
+    "name": "Staging Area","url":"",
+    "children": [{"name": "Apple","url":""}, {"name": "Banana","url":""}, {"name": "Fruit loops","url":""}]
   },
   {
-    "name": "UDS",
-    "children": [{"name": "Apple"}, {"name": "Banana"}, {"name": "Fruit loops"}]
+    "name": "UDS","url":"",
+    "children": [{"name": "Apple","url":"https://orf.at"}, {"name": "Banana","url":"https://orf.at"}, {"name": "Fruit loops","url":"https://orf.at"}]
   },
   {
-    "name": "Configuration",
-    "children": [{"name": "Apple"}, {"name": "Banana"}, {"name": "Fruit loops"}]
+    "name": "Configuration","url":"",
+    "children": [{"name": "Apple","url":"https://orf.at"}, {"name": "Banana","url":"https://orf.at"}, {"name": "Fruit loops","url":"https://orf.at"}]
   },
-  {"name": "Dashboard" }, 
-  {"name": "iDQM Portal" }, 
-  {"name": "Instruments" }, 
-  {"name": "Parties" }, 
-  {"name": "Codelists" }, 
-  {"name": "WS Parameters" }, 
-  {"name": "Worker jobs pool" }, 
-  {"name": "Incremental propagation" }, 
-  {"name": "System","children": [{"name": "Technical info"}, {"name": "DB pools","children": [{"name": "Main pool"}, {"name": "Caching pool"},{"name": "WH pool"}]},{"name": "Cache"}]
+  {"name": "Dashboard","url":"https://orf.at" }, 
+  {"name": "iDQM Portal","url":"https://orf.at" }, 
+  {"name": "Instruments","url":"https://orf.at" }, 
+  {"name": "Parties","url":"https://orf.at" }, 
+  {"name": "Codelists","url":"https://orf.at" }, 
+  {"name": "WS Parameters","url":"https://orf.at" }, 
+  {"name": "Worker jobs pool","url":"https://orf.at" }, 
+  {"name": "Incremental propagation","url":"https://orf.at" }, 
+  {"name": "System","url":"","children": [{"name": "Technical info","url":"https://orf.at"}, {"name": "DB pools","url":"https://orf.at","children": [{"name": "Main pool","url":"https://orf.at"}, {"name": "Caching pool","url":"https://orf.at"},{"name": "WH pool","url":"https://orf.at"}]},{"name": "Cache","url":"https://orf.at"}]
   },
   {
-    "name": "Uploads",
-    "children": [{"name": "XML Upload"}, {"name": "SHS CC Upload"}]
+    "name": "Uploads","url":"",
+    "children": [{"name": "XML Upload","url":""}, {"name": "SHS CC Upload","url":""}]
   },
 ];
 
