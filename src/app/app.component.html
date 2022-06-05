@@ -15,8 +15,9 @@
   </div>
 </mat-toolbar-row>
 </mat-toolbar>
-<div class="bounds">
-<div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+
+<div class="naija-flag">
+<div class="sidebar">
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
 <!-- This is the tree node template for leaf nodes -->
 <!-- There is inline padding applied to this node using styles.
@@ -43,12 +44,17 @@
   </div>
 </mat-nested-tree-node>
 </mat-tree>
-</div>
+
 </div>
 
-<div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+<div class="naija-flag">
+<div class="first">
 <app-heroes></app-heroes>
+</div>
+<div class="second">
 <app-messages></app-messages>
+</div>
+</div>
 </div>
 
 </ng-container>
