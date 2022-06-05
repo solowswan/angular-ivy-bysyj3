@@ -62,9 +62,12 @@ export class AppComponent {
   treeControl = new NestedTreeControl<FoodNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<FoodNode>();
 
-  constructor() {
-    this.dataSource.data = TREE_DATA;
+  constructor() {     this.dataSource.data = TREE_DATA;
+   }
+
+  ngOnInit(): void { 
   }
+
 
   hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
 
