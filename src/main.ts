@@ -15,6 +15,7 @@ import {AppComponent} from './app/app.component';
 import { HeroesComponent } from './app/heroes/heroes.component';
 import { HeroDetailComponent  } from './app/hero-detail/hero-detail.component';
 import { MessagesComponent } from './app/messages/messages.component';
+import { BatchbrowserComponent } from './app/batchbrowser/batchbrowser.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
@@ -39,7 +40,7 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
   entryComponents: [AppComponent],
-  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent],
+  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent,BatchbrowserComponent],
   bootstrap: [AppComponent],
   providers: []
 })
