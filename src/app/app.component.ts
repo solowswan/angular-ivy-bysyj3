@@ -15,7 +15,7 @@ const TREE_DATA: FoodNode[] = [
     "name": "Batches",
     "children": [
       {
-        "name": "Capture","children": [{"name": "Browse"},{"name": "New"}]
+        "name": "Capture","children": [{"name": "Dashboard"},{"name": "Batches"},{"name": "File manager"}]
       }, 
       {"name": "Unification","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"} ]}]      }, 
       {"name": "Grouping","children": [{"name": "Dashboard"},{"name": "Batches"}, {"name": "Schedule batches","children": [{"name": "New"} ]}]      }, 
@@ -48,7 +48,11 @@ const TREE_DATA: FoodNode[] = [
   {"name": "Worker jobs pool" }, 
   {"name": "Incremental propagation" }, 
   {"name": "System","children": [{"name": "Technical info"}, {"name": "DB pools","children": [{"name": "Main pool"}, {"name": "Caching pool"},{"name": "WH pool"}]},{"name": "Cache"}]
-}
+  },
+  {
+    "name": "Uploads",
+    "children": [{"name": "XML Upload"}, {"name": "SHS CC Upload"}]
+  },
 ];
 
 
