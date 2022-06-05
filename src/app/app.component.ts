@@ -42,7 +42,7 @@ const TREE_DATA: FoodNode[] = [
   },
   {"name": "Dashboard","url":"/heroesdetail" }, 
   {"name": "iDQM Portal","url":"/heroesdetail" }, 
-  {"name": "Instruments","url":"/heroesdetail" }, 
+  {"name": "Instruments","url":"/instrumentdetails" }, 
   {"name": "Parties","url":"/heroesdetail" }, 
   {"name": "Codelists","url":"/heroesdetail" }, 
   {"name": "WS Parameters","url":"/heroesdetail" }, 

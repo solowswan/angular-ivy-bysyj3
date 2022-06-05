@@ -16,11 +16,13 @@ import { HeroesComponent } from './app/heroes/heroes.component';
 import { HeroDetailComponent  } from './app/hero-detail/hero-detail.component';
 import { MessagesComponent } from './app/messages/messages.component';
 import { BatchbrowserComponent } from './app/batchbrowser/batchbrowser.component';
+import { InstrumentdetailsComponent } from './app/instrumentdetails/instrumentdetails.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'heroesdetail', component: HeroDetailComponent },
-  { path: 'batchbrowser', component: BatchbrowserComponent }
+  { path: 'batchbrowser', component: BatchbrowserComponent },
+  { path: 'instrumentdetails', component: InstrumentdetailsComponent }
 ];
 
 @NgModule({
