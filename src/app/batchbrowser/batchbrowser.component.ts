@@ -48,7 +48,7 @@ export class BatchbrowserComponent implements AfterViewInit {
   //displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   displayedColumns: string[] = ['idcpbatch', 'process_id', 'filename', 'source','state','startdate','records'];
   dataSource = new MatTableDataSource(BATCH_DATA);
-  cleaningline1: string;
+  cleaningline1: String;
 
 
 
@@ -56,14 +56,12 @@ export class BatchbrowserComponent implements AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(public messageService: MessageService) {
-   // this.cleaningline1 = this.messageService.cleaningline;
+    this.cleaningline1 = this.messageService.cleaningline;
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    this.cleaningline1 = this.messageService.cleaningline;
-
   }
 
   applyFilter(event: Event) {
