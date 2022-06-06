@@ -5,6 +5,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {AppComponent} from '../app.component';
 import { MessageService } from '../message.service';
+import { Router } from '@angular/router';
 
 export interface BatchElement {
   idcpbatch: number;
@@ -55,7 +56,8 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
  
 
   constructor(public messageService: MessageService, 
-    private changeDetectorRefs: ChangeDetectorRef) {
+    private changeDetectorRefs: ChangeDetectorRef, 
+    private router: Router) {
   }
   
   dataSource = new MatTableDataSource(BATCH_DATA);
@@ -95,7 +97,8 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
 
   onRowClicked(row) {
     let route = '/capturebatchbrowserdetails';
-    this.router.navigate([route], { queryParams: { id: 1 } });
+    console.log('Row clicked: ', row);
+    this.router.navigate([route], { queryParams: { id: row.idcpbatch } });
   }
 
 
