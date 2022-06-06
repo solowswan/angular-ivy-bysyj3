@@ -15,13 +15,13 @@ import {AppComponent} from './app/app.component';
 import { HeroesComponent } from './app/heroes/heroes.component';
 import { HeroDetailComponent  } from './app/hero-detail/hero-detail.component';
 import { MessagesComponent } from './app/messages/messages.component';
-import { BatchbrowserComponent } from './app/batchbrowser/batchbrowser.component';
+import { CapturebatchbrowserComponent } from './app/capturebatchbrowser/capturebatchbrowser.component';
 import { InstrumentdetailsComponent } from './app/instrumentdetails/instrumentdetails.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'heroesdetail', component: HeroDetailComponent },
-  { path: 'batchbrowser', component: BatchbrowserComponent },
+  { path: 'capturebatchbrowser', component: CapturebatchbrowserComponent },
   { path: 'instrumentdetails', component: InstrumentdetailsComponent }
 ];
 
@@ -43,7 +43,7 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
   entryComponents: [AppComponent],
-  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent,BatchbrowserComponent],
+  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent,CapturebatchbrowserComponent],
   bootstrap: [AppComponent],
   providers: []
 })

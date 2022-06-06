@@ -46,11 +46,11 @@ const BATCH_DATA_ISS: BatchElement[] = [
  * @title Data table with sorting, pagination, and filtering.
  */
 @Component({
-  selector: 'app-batchbrowser',
-  templateUrl: './batchbrowser.component.html',
-  styleUrls: ['./batchbrowser.component.css']
+  selector: 'app-capturebatchbrowser',
+  templateUrl: './capturebatchbrowser.component.html',
+  styleUrls: ['./capturebatchbrowser.component.css']
 })
-export class BatchbrowserComponent implements AfterViewInit {
+export class CapturebatchbrowserComponent implements AfterViewInit {
   //displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   displayedColumns: string[] = ['idcpbatch', 'process_id', 'filename', 'source','state','startdate','records'];
  
@@ -66,16 +66,6 @@ export class BatchbrowserComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  ngOnChanges(){
-    if (this.messageService.cleaningline="issuance") {
-    this.dataSource = new MatTableDataSource(BATCH_DATA_ISS)
-    }
-    else if (this.messageService.cleaningline="holding") {
-      this.dataSource = new MatTableDataSource(BATCH_DATA)
-    }
-
-  }
-
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -88,6 +78,13 @@ export class BatchbrowserComponent implements AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+
+    if (this.messageService.cleaningline="issuance") {
+      this.dataSource = new MatTableDataSource(BATCH_DATA_ISS)
+      }
+      else if (this.messageService.cleaningline="holding") {
+        this.dataSource = new MatTableDataSource(BATCH_DATA)
+      }
   }
 }
 
