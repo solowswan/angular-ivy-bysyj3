@@ -16,12 +16,14 @@ import { HeroesComponent } from './app/heroes/heroes.component';
 import { HeroDetailComponent  } from './app/hero-detail/hero-detail.component';
 import { MessagesComponent } from './app/messages/messages.component';
 import { CapturebatchbrowserComponent } from './app/capturebatchbrowser/capturebatchbrowser.component';
+import { CapturebatchbrowserfilterComponent } from './app/capturebatchbrowserfilter/capturebatchbrowserfilter.component';
 import { InstrumentdetailsComponent } from './app/instrumentdetails/instrumentdetails.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'heroesdetail', component: HeroDetailComponent },
   { path: 'capturebatchbrowser', component: CapturebatchbrowserComponent },
+  { path: 'capturebatchbrowserfilter', component: CapturebatchbrowserfilterComponent },
   { path: 'instrumentdetails', component: InstrumentdetailsComponent }
 ];
 
