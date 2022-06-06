@@ -39,7 +39,13 @@ const BATCH_DATA: BatchElement[] = [
 
 const BATCH_DATA_ISS: BatchElement[] = [
   {idcpbatch: 1, process_id:111, filename: '20220601-1231241-WMD-DBT-1123124-20220531', source:"WMD", state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
-  {idcpbatch: 2, process_id:112,filename: '20220601-1231241-OEN-SHR-1123124-20220531', source:"OEN",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100}
+  {idcpbatch: 2, process_id:112,filename: '20220601-1231241-OEN-SHR-1123124-20220531', source:"OEN",state:"Cleaning completed",startdate:"2012-03-19T07:22Z",records:100}
+];
+
+const BATCH_DATA_PAR: BatchElement[] = [
+  {idcpbatch: 1, process_id:111, filename: '20220601-1231241-RIADTS-1123124-20220531', source:"RIADTS", state:"Cleaning completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 2, process_id:113,filename: '20220601-1231241-OEN-SHR-1123124-20220531', source:"OEN",state:"Cleaning completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 3, process_id:114,filename: '20220601-1231241-GLEIF-1123124-20220531', source:"GLEIF",state:"Post capture completed",startdate:"2012-03-19T07:22Z",records:100}
 ];
 
 
@@ -73,6 +79,10 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
       }
       else if (this.messageService.cleaningline=="issuance") {
         this.dataSource = new MatTableDataSource(BATCH_DATA_ISS);
+        console.log("issuance data");
+      }
+      else if (this.messageService.cleaningline=="party") {
+        this.dataSource = new MatTableDataSource(BATCH_DATA_PAR);
         console.log("issuance data");
       }
     }
