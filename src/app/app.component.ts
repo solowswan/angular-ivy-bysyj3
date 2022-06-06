@@ -4,6 +4,8 @@ import {MatTreeNestedDataSource} from '@angular/material/tree';
 
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import { MessageService } from './message.service';
+
 
 interface FoodNode {
   name: string;
@@ -65,17 +67,17 @@ const TREE_DATA: FoodNode[] = [
 export class AppComponent {
   treeControl = new NestedTreeControl<FoodNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<FoodNode>();
-
   public selectedVal: string;
 
   public onValChange(val: string) {
     this.selectedVal = val;
+    this.messageService.add1(val);
   }
   
-  constructor() {     this.dataSource.data = TREE_DATA;
+  constructor(private messageService: MessageService) {     this.dataSource.data = TREE_DATA;
    }
 
-  ngOnInit(): void {    this.selectedVal ='option1';
+  ngOnInit(): void {    this.selectedVal ='issuance';
   }
 
 
