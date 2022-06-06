@@ -53,7 +53,7 @@ const ELEMENT_DATA: Instrument[] = [
     tag: "Instrument Income",
     value: '',
     expanded: false,
-    tag1: "Coupong Type",
+    tag1: "Coupon Type",
     value1: "FIX",
     tag2: "Coupon Rate",
     value2: 3.5,
