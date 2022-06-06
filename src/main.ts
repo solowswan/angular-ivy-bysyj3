@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'heroesdetail', component: HeroDetailComponent },
   { path: 'capturebatchbrowser', component: CapturebatchbrowserComponent },
   { path: 'capturebatchbrowserfilter', component: CapturebatchbrowserfilterComponent },
+  { path: 'capturebatchbrowserdetails', component: CapturebatchbrowserdetailsComponent },
   { path: 'instrumentdetails', component: InstrumentdetailsComponent }
 ];
 

@@ -93,6 +93,10 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
     }  
   }
 
+  onRowClicked(row) {
+    let route = '/capturebatchbrowserdetails';
+    this.router.navigate([route], { queryParams: { id: 1 } });
+  }
 
 
 }
