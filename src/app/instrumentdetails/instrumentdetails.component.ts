@@ -7,39 +7,67 @@ import {AppComponent} from '../app.component';
 import { MessageService } from '../message.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
+
 export interface Instrument {
-  IDIRINSTRUMENT: number;
-  ISIN: string;  
-  SHORTNAME: string;
-  IDISSUEDATE: string;
-  IDMATURITYDATE: string;
-  AMOUNTOUTSTANDING: string;
-  COUPONTYPE: number;
-}
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  tag: string;
+  value: string;
   expanded: boolean;
+  tag1: string;
+  value1: string;
+  tag2: string;
+  value2: number
+  tag3: string;
+  value3: string
+  tag4: string;
+  value4: string
+  tag5: string;
+  value5: number;
+  tag6: string;
+  value6: number;
+  tag7: string;
+  value7: number;    
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: Instrument[] = [
   {
-    position: 1,
-    name: 'Hydrogen',
-    weight: 1.0079,
-    symbol: 'H',
-    "expanded": false
+    tag: "Instrument Core",
+    value: '30 JUN 2022',
+    expanded: false,
+    tag1: "ISIN",
+    value1: "DE0007100000",
+    tag2: "IDIRINSTRUMENT",
+    value2: 213123,
+    tag3: "Issue date",
+    value3: "01011900",
+    tag4: "Maturity date",
+    value4: "01012020",
+    tag5: "Amount outstanding",
+    value5: 12312441,
+    tag6: "",
+    value6: 0,
+    tag7: "",
+    value7: 0
+
   },
   {
-    position: 2,
-    name: 'Helium',
-    weight: 4.0026,
-    symbol: 'He',
-    "expanded": false
-  },
+    tag: "Instrument Income",
+    value: '',
+    expanded: false,
+    tag1: "Coupong Type",
+    value1: "FIX",
+    tag2: "Coupon Rate",
+    value2: 3.5,
+    tag3: "Coupon Frequency",
+    value3: "AN",
+    tag4: "Coupon Underlying",
+    value4: "EURIBOR 3MO",
+    tag5: "Coupon Spread",
+    value5: 1.2,
+    tag6: "",
+    value6: 0,
+    tag7: "",
+    value7: 0
+  }
 ]
 
 @Component({
@@ -58,7 +86,7 @@ export class InstrumentdetailsComponent {
 
   dataSource = ELEMENT_DATA;
 
-  columnsToDisplay = ['id', 'name', 'username', 'email', 'address'];
+  columnsToDisplay = ['tag', 'value'];
   toggleRow(element: { expanded: boolean; }) {
     // Uncommnet to open only single row at once
     // ELEMENT_DATA.forEach(row => {

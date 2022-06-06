@@ -18,17 +18,25 @@
       <div class="example-element-detail" [@detailExpand]="element.expanded ? 'expanded' : 'collapsed'">
         <table class="detail-table">
           <tr>
-            <th>Avatar</th>
-            <th>Phone</th>
-            <th>Website</th>
-            <th>Company</th>
+            <th>{{element.tag1}}</th>
+            <td>{{element.value1}}</td>
           </tr>
           <tr>
-            <td><img src="https://picsum.photos/id/{{element.id}}/150/100" alt="thumbnail"></td>
-            <td>{{element.phone}}</td>
-            <td>{{element.website}}</td>
-            <td>{{element.company}}</td>
-          </tr>
+          <th>{{element.tag2}}</th>
+          <td>{{element.value2}}</td>
+        </tr>
+        <tr>
+        <th>{{element.tag3}}</th>
+        <td>{{element.value3}}</td>
+      </tr>
+      <tr>
+      <th>{{element.tag4}}</th>
+      <td>{{element.value4}}</td>
+    </tr>
+    <tr>
+    <th>{{element.tag5}}</th>
+    <td>{{element.value5}}</td>
+  </tr>
         </table>
       </div>
     </td>
