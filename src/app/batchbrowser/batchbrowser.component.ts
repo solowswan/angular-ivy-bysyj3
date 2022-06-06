@@ -50,14 +50,12 @@ export class BatchbrowserComponent implements AfterViewInit {
   dataSource = new MatTableDataSource(BATCH_DATA);
   cleaningline1: String;
 
-
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
   constructor(public messageService: MessageService) {
     this.cleaningline1 = this.messageService.cleaningline;
   }
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
