@@ -22,7 +22,7 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
-  description: string;
+  expanded: boolean;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -31,17 +31,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: 'Hydrogen',
     weight: 1.0079,
     symbol: 'H',
-    description: `Hydrogen is a chemical element with symbol H and atomic number 1. With a standard
-        atomic weight of 1.008, hydrogen is the lightest element on the periodic table.`,
+    "expanded": false
   },
   {
     position: 2,
     name: 'Helium',
     weight: 4.0026,
     symbol: 'He',
-    description: `Helium is a chemical element with symbol He and atomic number 2. It is a
-        colorless, odorless, tasteless, non-toxic, inert, monatomic gas, the first in the noble gas
-        group in the periodic table. Its boiling point is the lowest among all the elements.`,
+    "expanded": false
   },
 ]
 
@@ -59,10 +56,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class InstrumentdetailsComponent {
 
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = ELEMENT_DATA;
 
-  columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
-  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
-  expandedElement: PeriodicElement | null;
+  columnsToDisplay = ['id', 'name', 'username', 'email', 'address'];
+  toggleRow(element: { expanded: boolean; }) {
+    // Uncommnet to open only single row at once
+    // ELEMENT_DATA.forEach(row => {
+    //   row.expanded = false;
+    // })
+    element.expanded = !element.expanded
+  }
 
+  manageAllRows(flag: boolean) {
+    ELEMENT_DATA.forEach(row => { row.expanded = flag; })
+  }
 }
