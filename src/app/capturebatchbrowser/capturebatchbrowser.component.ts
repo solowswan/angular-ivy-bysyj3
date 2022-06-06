@@ -66,6 +66,16 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  ngOnInit(): void {    
+    this.cline = this.messageService.cleaningline;
+    if (this.cline="issuance") {
+      this.dataSource = new MatTableDataSource(BATCH_DATA);
+      }
+      else if (this.cline="holding") {
+        this.dataSource = new MatTableDataSource(BATCH_DATA_ISS);
+      }
+    }
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -79,12 +89,7 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
 
-    if (this.messageService.cleaningline="issuance") {
-      this.dataSource = new MatTableDataSource(BATCH_DATA_ISS)
-      }
-      else if (this.messageService.cleaningline="holding") {
-        this.dataSource = new MatTableDataSource(BATCH_DATA)
-      }
+    
   }
 }
 

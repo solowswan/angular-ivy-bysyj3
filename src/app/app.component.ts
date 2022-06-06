@@ -18,7 +18,7 @@ const TREE_DATA: FoodNode[] = [
     "name": "Batches","url":"/heroesdetail",
     "children": [
       {
-        "name": "Capture","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":"/capturebatchbrowserfilter"},{"name": "File manager","url":""}]
+        "name": "Capture","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":"/capturebatchbrowser"},{"name": "File manager","url":""}]
       }, 
       {"name": "Unification","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""} ]}]      }, 
       {"name": "Grouping","url":"","children": [{"name": "Dashboard","url":""},{"name": "Batches","url":""}, {"name": "Schedule batches","url":"","children": [{"name": "New","url":""} ]}]      }, 
