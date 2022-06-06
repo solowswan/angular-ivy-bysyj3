@@ -62,14 +62,11 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
   
   dataSource = new MatTableDataSource(BATCH_DATA);
   
-  public cline: string;
-
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
 
   ngOnInit(): void {    
-    this.cline = this.messageService.cleaningline;
     if (this.messageService.cleaningline=="holding") {
       this.dataSource = new MatTableDataSource(BATCH_DATA);
       console.log("holding data");
