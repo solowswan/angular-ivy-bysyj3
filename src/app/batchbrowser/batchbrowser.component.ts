@@ -57,7 +57,7 @@ export class BatchbrowserComponent implements AfterViewInit {
 
   constructor(public messageService: MessageService) {
   }
-
+  
   dataSource = new MatTableDataSource(BATCH_DATA)
   dataSource_iss = new MatTableDataSource(BATCH_DATA_ISS)
 
