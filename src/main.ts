@@ -45,7 +45,7 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
   entryComponents: [AppComponent],
-  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent,CapturebatchbrowserComponent],
+  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent,CapturebatchbrowserComponent,InstrumentdetailsComponent],
   bootstrap: [AppComponent],
   providers: []
 })

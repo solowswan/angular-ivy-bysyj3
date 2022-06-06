@@ -6,14 +6,6 @@ import {MatTableDataSource} from '@angular/material/table';
 import {AppComponent} from '../app.component';
 import { MessageService } from '../message.service';
 
-
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  fruit: string;
-}
-
 export interface BatchElement {
   idcpbatch: number;
   process_id: number;  
