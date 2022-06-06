@@ -77,7 +77,9 @@ export class AppComponent {
   constructor(private messageService: MessageService) {     this.dataSource.data = TREE_DATA;
    }
 
-  ngOnInit(): void {    this.selectedVal ='holding';
+  ngOnInit(): void {    
+  this.selectedVal ='holding';
+  this.messageService.add1('holding');
   }
 
 
