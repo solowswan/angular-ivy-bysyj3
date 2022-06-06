@@ -16,6 +16,7 @@ import { HeroesComponent } from './app/heroes/heroes.component';
 import { HeroDetailComponent  } from './app/hero-detail/hero-detail.component';
 import { MessagesComponent } from './app/messages/messages.component';
 import { CapturebatchbrowserComponent } from './app/capturebatchbrowser/capturebatchbrowser.component';
+import { CapturebatchbrowserdetailsComponent } from './app/capturebatchbrowserdetails/capturebatchbrowserdetails.component';
 import { CapturebatchbrowserfilterComponent } from './app/capturebatchbrowserfilter/capturebatchbrowserfilter.component';
 import { InstrumentdetailsComponent } from './app/instrumentdetails/instrumentdetails.component';
 
@@ -45,7 +46,7 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
   entryComponents: [AppComponent],
-  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent,CapturebatchbrowserComponent,InstrumentdetailsComponent],
+  declarations: [AppComponent, HeroesComponent,HeroDetailComponent,MessagesComponent,CapturebatchbrowserComponent,CapturebatchbrowserdetailsComponent,InstrumentdetailsComponent],
   bootstrap: [AppComponent],
   providers: []
 })
