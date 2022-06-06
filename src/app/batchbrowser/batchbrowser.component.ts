@@ -36,6 +36,12 @@ const BATCH_DATA: BatchElement[] = [
   {idcpbatch: 10, process_id:120,filename: '20220601-1231241-BBK-SHSS-1123124-20220531', source:"BBK",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
 ];
 
+const BATCH_DATA_ISS: BatchElement[] = [
+  {idcpbatch: 1, process_id:111, filename: '20220601-1231241-WMD-DBT-1123124-20220531', source:"WMD", state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100},
+  {idcpbatch: 2, process_id:112,filename: '20220601-1231241-OEN-SHR-1123124-20220531', source:"OEN",state:"Capture completed",startdate:"2012-03-19T07:22Z",records:100}
+];
+
+
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
@@ -47,13 +53,15 @@ const BATCH_DATA: BatchElement[] = [
 export class BatchbrowserComponent implements AfterViewInit {
   //displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   displayedColumns: string[] = ['idcpbatch', 'process_id', 'filename', 'source','state','startdate','records'];
-  dataSource = new MatTableDataSource(BATCH_DATA);
-  cleaningline1: String;
+ 
 
   constructor(public messageService: MessageService) {
-    this.cleaningline1 = this.messageService.cleaningline;
   }
 
+  dataSource = new MatTableDataSource(BATCH_DATA)
+  dataSource_iss = new MatTableDataSource(BATCH_DATA_ISS)
+
+  
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
