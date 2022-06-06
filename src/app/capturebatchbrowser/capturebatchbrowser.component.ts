@@ -41,7 +41,6 @@ const BATCH_DATA_PAR: BatchElement[] = [
   {idcpbatch: 3, process_id:114,filename: '20220601-1231241-GLEIF-1123124-20220531', source:"GLEIF",state:"Post capture completed",startdate:"2012-03-19T07:22Z",records:100}
 ];
 
-
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
@@ -64,7 +63,6 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
 
   ngOnInit(): void {    
     if (this.messageService.cleaningline=="holding") {
