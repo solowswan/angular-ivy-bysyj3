@@ -1,3 +1,4 @@
+import { OnInit, ChangeDetectorRef } from '@angular/core';
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -55,24 +56,27 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
   displayedColumns: string[] = ['idcpbatch', 'process_id', 'filename', 'source','state','startdate','records'];
  
 
-  constructor(public messageService: MessageService) {
+  constructor(public messageService: MessageService, 
+    private changeDetectorRefs: ChangeDetectorRef) {
   }
   
-  dataSource = new MatTableDataSource(BATCH_DATA)
+  dataSource = new MatTableDataSource(BATCH_DATA);
   
   public cline: string;
 
-  
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+
   ngOnInit(): void {    
     this.cline = this.messageService.cleaningline;
-    if (this.cline="issuance") {
+    if (this.messageService.cleaningline=="holding") {
       this.dataSource = new MatTableDataSource(BATCH_DATA);
+      console.log("holding data");
       }
-      else if (this.cline="holding") {
+      else if (this.messageService.cleaningline=="issuance") {
         this.dataSource = new MatTableDataSource(BATCH_DATA_ISS);
+        console.log("issuance data");
       }
     }
 
@@ -87,9 +91,10 @@ export class CapturebatchbrowserComponent implements AfterViewInit {
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
-    }
-
-    
+    }  
   }
+
+
+
 }
 
