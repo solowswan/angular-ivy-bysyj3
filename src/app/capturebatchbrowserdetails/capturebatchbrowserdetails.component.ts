@@ -6,7 +6,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {AppComponent} from '../app.component';
 import { MessageService } from '../message.service';
 import { Router } from '@angular/router';
-
+ 
 export interface BatchElement {
   idcpbatch: number;
   process_id: number;  
